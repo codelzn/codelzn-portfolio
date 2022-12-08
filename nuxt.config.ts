@@ -1,15 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import glsl from 'vite-plugin-glsl'
 export default defineNuxtConfig({
-  css: ['~/assets/styles/global.scss'],
+	app: {
+		head: {
+			viewport: 'width=500, initial-scale=1',
+			title: "codelzn's portfolio",
+		},
+	},
+	css: ['~/assets/styles/global.scss'],
 	modules: [
 		'@pinia/nuxt',
 		'@nuxtjs/apollo',
 		'@vueuse/nuxt',
 		'@nuxtjs/tailwindcss',
 	],
-  tailwindcss: {
-    cssPath: '~/assets/styles/tailwind.scss',
+	tailwindcss: {
+		cssPath: '~/assets/styles/tailwind.scss',
 		viewer: false,
 	},
 	apollo: {
@@ -26,8 +32,8 @@ export default defineNuxtConfig({
 				strict: true,
 			},
 		},
-  },
-  vite: {
-    plugins: [glsl({watch: false})],
-  }
+	},
+	vite: {
+		plugins: [glsl({ watch: false })],
+	},
 })

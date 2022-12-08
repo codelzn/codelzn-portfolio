@@ -31,7 +31,7 @@ class Galaxy {
     this.renderer.setSize(this.sizes.width, this.sizes.height)
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     this.camera.position.z = 5
-    this.camera.position.y = 2
+    this.camera.position.y = 1
     this.scene.add(this.camera)
     this.generateGalaxy()
     this.setResize()
